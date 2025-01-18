@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: 478641183914.dkr.ecr.us-east-1.amazonaws.com/test-coworking-analytics:4
+        image: 478641183914.dkr.ecr.us-east-1.amazonaws.com/test-coworking-analytics:2
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -44,17 +44,20 @@ spec:
             port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 5
+        envFrom:
+        - configMapRef:
+            name: coworking-postgresql
         env:
         - name: DB_NAME
           valueFrom:
             configMapKeyRef:
               name: coworking-postgresql
               key: DB_NAME
-        - name: DB_USER
+        - name: DB_USERNAME
           valueFrom:
             configMapKeyRef:
               name: coworking-postgresql
-              key: DB_USER
+              key: DB_USERNAME
         - name: DB_HOST
           valueFrom:
             configMapKeyRef:

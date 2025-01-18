@@ -4,7 +4,7 @@ metadata:
   name: coworking-postgresql
 data:
   DB_NAME: "analyticsdb"
-  DB_USER: "vagiadmindb"
+  DB_USERNAME: "vagiadmindb"
   DB_HOST: "postgresql-service"
   DB_PORT: "5432"
 ---
