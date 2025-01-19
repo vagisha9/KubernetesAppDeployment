@@ -19,6 +19,7 @@ For this project, you are a DevOps engineer who will be collaborating with a tea
 4. AWS CloudWatch - monitor activity and logs in EKS
 5. GitHub - pull and clone code
 
+
 ### Setup
 #### 1. Configure a Database
 Set up a Postgres database using a Helm Chart.
